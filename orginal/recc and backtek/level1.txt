@@ -1,0 +1,3460 @@
+Print Decreasing
+Easy
+
+1. You are given a positive number n. 
+2. You are required to print the counting from n to 1.
+3. You are required to not use any loops. Complete the body of print Decreasing function to achieve it.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 1000
+
+Format
+Input
+A number n
+
+Output
+n
+n - 1
+n - 2
+.. 
+1
+
+Example
+Sample Input
+
+5
+
+Sample Output
+5
+4
+3
+2
+1
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    printDecreasing(n);
+  }
+
+  public static void printDecreasing(int n) {
+    if(n == 0){
+      return;
+    }
+    
+    System.out.println(n);
+    printDecreasing(n - 1);
+  }
+
+}
+
+#include<iostream>
+using namespace std;
+
+void printDecreasing(int n){
+    if(n==0)
+    return ;
+    
+    cout<<n<<"\n";
+    printDecreasing(n-1);
+
+}
+
+
+int main(){
+    int n; cin>>n;
+    printDecreasing(n);
+}
+---------------------------------------------------------------------------------------------
+
+Print Increasing
+Easy
+
+1. You are given a positive number n. 
+2. You are required to print the counting from 1 to n.
+3. You are required to not use any loops. Complete the body of print Increasing function to achieve it. Don't change the signature of the function.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 1000
+
+Format
+Input
+A number n
+
+Output
+1
+2
+3
+..
+n
+
+Example
+Sample Input
+
+5
+
+Sample Output
+1
+2
+3
+4
+5
+
+#include<iostream>
+using namespace std;
+
+void printIncreasing(int n){
+    if(n==0)
+    return ;
+    
+    printIncreasing(n-1);
+    cout<<n<<"\n";
+    
+}
+
+
+int main(){
+    int n; cin>>n;
+    printIncreasing(n);
+}
+
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    printIncreasing(n);
+  }
+
+  public static void printIncreasing(int n) {
+    if(n == 0){
+      return;
+    }
+    
+    printIncreasing(n - 1);
+    System.out.println(n);
+  }
+
+}
+
+
+-----------------------------------------------------------------------------------------------                
+
+Print Increasing Decreasing
+Easy
+
+1. You are given a positive number n. 
+2. You are required to print the counting from n to 1 and back to n again.
+3. You are required to not use any loops. Complete the body of pdi function to achieve it. Don't change the signature of the function.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is.Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 1000
+
+Format
+Input
+A number n
+
+Output
+n
+n - 1
+n - 2
+..
+1
+1
+2
+3
+..
+n
+
+Example
+Sample Input
+
+3
+
+Sample Output
+3
+2
+1
+2
+3
+1
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    pdi(n);
+  }
+
+  public static void pdi(int n) {
+    if(n == 0){
+      return;
+    }
+    
+    System.out.println(n);
+    pdi(n - 1);
+    System.out.println(n);
+  }
+
+}
+
+
+                        
+#include<iostream>
+using namespace std;
+
+void printIncDec(int n)
+{
+    if(n==0)
+    return ;
+    
+    cout<<n<<"\n";
+    printIncDec(n-1);
+    cout<<n<<"\n";
+    
+}
+
+
+int main()
+{
+    int n; cin>>n;
+    printIncDec(n);
+}
+
+----------------------------------------------------------------------------------------------
+
+Factorial
+Easy
+
+1. You are given a number n.
+2. You are required to calculate the factorial of the number. Don't change the signature of factorial function.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is.Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+
+Format
+Input
+A number n
+
+Output
+factorial of n
+
+Example
+Sample Input
+
+5
+
+Sample Output
+120
+
+#include<iostream>
+using namespace std;
+
+int factorial(int n)
+{
+    if(n==0)
+    return 1;
+    
+    int fnm1=factorial(n-1); //Factorial of n-1
+    
+    return n*fnm1;
+    
+}
+
+
+int main()
+{
+    int n; cin>>n;
+    cout<<factorial(n);
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    int f = factorial(n);
+    System.out.println(f);
+  }
+
+  public static int factorial(int n) {
+    if(n == 0){
+      return 1;
+    }
+    int fm1 = factorial(n - 1);
+    int f = fm1 * n;
+    return f;
+  }
+
+}
+
+
+-------------------------------------------------------------------------------------------
+
+Power-linear
+Easy
+
+1. You are given a number x.
+2. You are given another number n.
+3. You are required to calculate x raised to the power n. Don't change the signature of power function .
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= x <= 10
+0 <= n <= 9
+
+Format
+Input
+A number x
+A number n
+
+Output
+x raised to the power n
+
+Example
+Sample Input
+
+2
+5
+
+Sample Output
+32
+
+#include<iostream>
+using namespace std;
+
+int power(int x,int n){
+    if(n==0)
+    return 1;
+    
+    int smlans=power(x,n-1); //x^(n-1)
+    return x*smlans; 
+}
+
+
+int main(){
+    int n,x; cin>>x>>n;
+    cout<<power(x,n);
+}
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int x = Integer.parseInt(br.readLine());
+    int n = Integer.parseInt(br.readLine());
+    int p = power(x, n);
+    System.out.println(p);
+  }
+
+  public static int power(int x, int n) {
+    if(n == 0){
+      return 1;
+    }
+    int xpnm1 = power(x, n - 1);
+    int xpn = xpnm1 * x;
+    return xpn;
+  }
+
+}
+
+--------------------------------------------------------------------------------------------
+
+Power-logarithmic
+Easy
+
+1. You are given a number x.
+2. You are given another number n.
+3. You are required to calculate x raised to the power n. Don't change the signature of power function.
+
+Note1 -> The previous version expects the call stack to be of n height. This function expects call function to be only log(n) high.
+
+Note2 -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= x <= 10
+0 <= n <= 9
+
+Format
+Input
+A number x
+A number n
+
+Output
+x raised to the power n
+
+Example
+Sample Input
+
+2
+5
+
+Sample Output
+32
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int x = Integer.parseInt(br.readLine());
+    int n = Integer.parseInt(br.readLine());
+    int p = power(x, n);
+    System.out.println(p);
+  }
+
+  public static int power(int x, int n) {
+    if(n == 0){
+      return 1;
+    }
+    int xpnb2 = power(x, n / 2);
+    int xpn = xpnb2 * xpnb2;
+
+    if(n % 2 == 1){
+      xpn = xpn * x;
+    }
+
+    return xpn;
+  }
+
+}
+
+
+                        #include<iostream>
+using namespace std;
+
+int powerLogarithmic(int x,int n){
+    if(n==0)
+    return 1;
+    
+    int pxnb2=powerLogarithmic(x,n/2);
+    
+    if(n%2==0){
+        return pxnb2*pxnb2;
+    }
+    else{
+        return x*pxnb2*pxnb2;
+    }
+    
+}
+
+int main(){
+    int x,n; cin>>x>>n;
+    cout<<powerLogarithmic(x,n);
+}
+
+-------------------------------------------------------------------------------------------
+
+Print Zigzag
+Easy
+
+1. Here are a few sets of inputs and outputs for your reference
+Input1 -> 1
+Output1 -> 1 1 1
+
+Input2 -> 2
+Output2 -> 2 1 1 1 2 1 1 1 2
+
+Input2 -> 3
+Output3 -> 3 2 1 1 1 2 1 1 1 2 3 2 1 1 1 2 1 1 1 2 3
+
+2. Figure out the pattern and complete the recursive function pzz to achieve the above for any positive number n.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is.Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 10
+
+Format
+Input
+A number n
+
+Output
+As discussed in point 1 of description
+
+Example
+Sample Input
+
+3
+
+Sample Output
+3 2 1 1 1 2 1 1 1 2 3 2 1 1 1 2 1 1 1 2 3
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    pzz(n);
+  }
+
+  public static void pzz(int n) {
+    if(n == 0){
+      return;
+    }
+    
+    System.out.print(n + " ");
+    pzz(n - 1);
+    System.out.print(n + " ");
+    pzz(n - 1);
+    System.out.print(n + " ");
+  }
+
+}
+
+
+                        #include<iostream>
+using namespace std;
+
+
+void pzz(int n){
+    if(n==0)
+    return ;
+    
+    cout<<n<<" ";
+    pzz(n-1);
+    cout<<n<<" ";
+    pzz(n-1);
+    cout<<n<<" ";
+    
+    
+}
+
+
+
+int main(){
+    int n; cin>>n;
+    pzz(n);
+}
+
+----------------------------------------------------------------------------------------------
+
+Tower Of Hanoi
+Easy
+
+Tower Of Hanoi
+
+1. There are 3 towers. Tower 1 has n disks, where n is a positive number. Tower 2 and 3 are empty. 2. The disks are increasingly placed in terms of size such that the smallest disk is on top and largest disk is at bottom. 3. You are required to 3.1. Print the instructions to move the disks. 3.2. from tower 1 to tower 2 using tower 3 3.3. following the rules 3.3.1 move 1 disk at a time. 3.3.2 never place a smaller disk under a larger disk. 3.3.3 you can only move a disk at the top. Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is.Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+
+Constraints
+0 <= n <= 9 10 <= n1, n2, n3 <= 10^9 n1 != n2 != n3
+
+
+Format
+Input
+A number n, representing number of disks A number n1, representing id of tower 1 A number n2, representing id of tower 2 A number n3, representing id of tower 3
+
+
+Output
+n[n1 -> n2] .. A set of instructions in above format to represent, move nth disc from n1 tower to n2 tower
+
+
+Example
+Sample Input
+
+3
+10
+11
+12
+
+Sample Output
+1[10 -> 11]
+2[10 -> 12]
+1[11 -> 12]
+3[10 -> 11]
+1[12 -> 10]
+2[12 -> 11]
+1[10 -> 11]
+
+#include<iostream>
+using namespace std;
+
+void toh(int n, int t1id, int t2id, int t3id){
+    if(n == 0){
+      return;
+    }
+    
+    toh(n - 1, t1id, t3id, t2id);
+    cout<<n<<"["<<t1id<<" -> "<<t2id<<"]"<<endl;
+    toh(n - 1, t3id, t2id, t1id);
+  }
+
+
+
+
+int  main() {
+
+    int n;cin>>n;
+    int n1,n2,n3;cin>>n1>>n2>>n3;
+    toh(n, n1, n2, n3);
+  }
+
+
+  import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    int n1 = Integer.parseInt(br.readLine());
+    int n2 = Integer.parseInt(br.readLine());
+    int n3 = Integer.parseInt(br.readLine());
+
+    toh(n, n1, n2, n3);
+  }
+
+  public static void toh(int n, int t1id, int t2id, int t3id){
+    if(n == 0){
+      return;
+    }
+    
+    toh(n - 1, t1id, t3id, t2id);
+    System.out.println(n + "[" + t1id + " -> " + t2id + "]");
+    toh(n - 1, t3id, t2id, t1id);
+  }
+
+}
+
+-----------------------------------------------------------------------------------------------
+
+Display Array
+Easy
+
+1. You are given a number n, representing the size of array a.
+2. You are given n numbers, representing elements of array a.
+3. You are required to print the elements of array from beginning to end each in a separate line.
+4. For the above purpose complete the body of displayArr function. Don't change the signature.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 30
+0 <= n1, n2, .. n elements <= 10
+
+Format
+Input
+A number n
+n1
+n2
+.. n number of elements
+
+Output
+n1
+n2
+.. n elements
+
+Example
+Sample Input
+
+5
+3
+1
+0
+7
+5
+
+Sample Output
+3
+1
+0
+7
+5
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    int[] arr = new int[n];
+
+    for (int i = 0; i < n; i++) {
+      arr[i] = Integer.parseInt(br.readLine());
+    }
+
+    displayArr(arr, 0);
+  }
+
+  public static void displayArr(int[] arr, int idx) {
+    if (idx == arr.length) {
+      return;
+    }
+
+    System.out.println(arr[idx]);
+    displayArr(arr, idx + 1);
+  }
+
+}
+
+
+                        #include <iostream>
+using namespace std;
+
+void display(int arr[], int idx, int n){
+
+    if (idx == n)
+        return;
+
+    cout << arr[idx] << endl;
+    display(arr, idx + 1, n);
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    display(arr, 0, n);
+}
+
+---------------------------------------------------------------------------------------------
+
+Display Array In Reverse
+Easy
+
+1. You are given a number n, representing the size of array a.
+2. You are given n numbers, representing elements of array a.
+3. You are required to print the elements of array from end to beginning each in a separate line.
+4. For the above purpose complete the body of displayArrReverse function. Don't change the signature.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 30
+0 <= n1, n2, .. n elements <= 10
+
+Format
+Input
+A number n
+n1
+n2
+.. n number of elements
+
+Output
+n1
+n2
+.. n elements
+
+Example
+Sample Input
+
+5
+3
+1
+0
+7
+5
+
+Sample Output
+5
+7
+0
+1
+3
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    int[] arr = new int[n];
+
+    for (int i = 0; i < n; i++) {
+      arr[i] = Integer.parseInt(br.readLine());
+    }
+
+    displayArrReverse(arr, 0);
+  }
+
+  public static void displayArrReverse(int[] arr, int idx) {
+    if (idx == arr.length) {
+      return;
+    }
+
+    displayArrReverse(arr, idx + 1);
+    System.out.println(arr[idx]);
+  }
+
+}
+
+
+                        #include <iostream>
+using namespace std;
+
+void display(int arr[], int idx, int n){
+
+    if (idx == n)
+        return;
+
+    display(arr, idx + 1, n);
+    cout << arr[idx] << endl;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    display(arr, 0, n);
+}
+
+-----------------------------------------------------------------------------------------------
+
+Max Of An Array
+Easy
+
+1. You are given a number n, representing the count of elements.
+2. You are given n numbers.
+3. You are required to find the maximum of input. 
+4. For the purpose complete the body of maxOfArray function. Don't change the signature.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 10^4
+0 <= n1, n2, .. n elements <= 10 ^9
+
+Format
+Input
+A number n
+n1
+n2
+.. n number of elements
+
+Output
+A number representing max
+
+Example
+Sample Input
+
+6
+15
+30
+40
+4
+11
+9
+
+Sample Output
+40
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine());
+      int[] arr = new int[n];
+
+      for (int i = 0; i < n; i++) {
+         arr[i] = Integer.parseInt(br.readLine());
+      }
+
+      int max = maxOfArray(arr, 0);
+      System.out.println(max);
+   }
+
+   public static int maxOfArray(int[] arr, int idx) {
+      if(idx == arr.length - 1){
+         return arr[idx];
+      }
+      
+      int misa = maxOfArray(arr, idx + 1);
+      if(misa > arr[idx]){
+         return misa;
+      } else {
+         return arr[idx];
+      }
+   }
+
+}
+
+
+#include <iostream>
+using namespace std;
+
+int max(int arr[], int idx, int n){
+
+    if (idx == n - 1)
+        return arr[idx];
+
+    int a = max(arr, idx + 1, n);
+    if (a > arr[idx])
+        return a;
+    else
+        return arr[idx];
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    int p = max(arr, 0, n);
+    cout << p << endl;
+}
+
+----------------------------------------------------------------------------------------------
+
+First Index
+Easy
+
+1. You are given a number n, representing the count of elements.
+2. You are given n numbers.
+3. You are given a number x. 
+4. You are required to find the first index at which x occurs in array a.
+5. If x exists in array, print the first index where it is found otherwise print -1.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 10^4
+0 <= n1, n2, .. n elements <= 10 ^ 3
+0 <= x <= 10 ^ 3
+
+Format
+Input
+A number n
+n1
+n2
+.. n number of elements
+A number x
+
+Output
+A number representing first index of occurence of x in array a or -1 if not found at all.
+
+Example
+Sample Input
+
+6
+15
+11
+40
+4
+4
+9
+4
+
+Sample Output
+3
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine());
+      int[] arr = new int[n];
+
+      for (int i = 0; i < n; i++) {
+         arr[i] = Integer.parseInt(br.readLine());
+      }
+      int x = Integer.parseInt(br.readLine());
+      int fi = firstIndex(arr, 0, x);
+      System.out.println(fi);
+   }
+
+   public static int firstIndex(int[] arr, int idx, int x) {
+      if(idx == arr.length){
+         return -1;
+      }
+
+      if(arr[idx] == x){
+         return idx;
+      } else {
+         int fiisa = firstIndex(arr, idx + 1, x);
+         return fiisa;
+      }
+   }
+
+}
+
+
+#include<iostream>
+using namespace std;
+
+int firstIndex(int arr[], int idx, int x, int n){
+
+    if (idx == n)
+        return -1;
+
+    if (arr[idx] == x){
+        return idx;
+    }else{
+        int a = firstIndex(arr, idx + 1, x, n);
+        return a;
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int d;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    cin >> d;
+    int p = firstIndex(arr, 0, d, n);
+    cout << p << endl;
+}
+
+----------------------------------------------------------------------------------------------
+
+Last Index
+Easy
+
+1. You are given a number n, representing the count of elements.
+2. You are given n numbers.
+3. You are given a number x. 
+4. You are required to find the last index at which x occurs in array a.
+5. If x exists in array, print the last index where it is found otherwise print -1.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 10^4
+0 <= n1, n2, .. n elements <= 10 ^ 3
+0 <= x <= 10 ^ 3
+
+Format
+Input
+A number n
+n1
+n2
+.. n number of elements
+A number x
+
+Output
+A number representing last index of occurence of x in array a or -1 if not found at all.
+
+Example
+Sample Input
+
+6
+15
+11
+40
+4
+4
+9
+4
+
+Sample Output
+4
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine());
+      int[] arr = new int[n];
+
+      for (int i = 0; i < n; i++) {
+         arr[i] = Integer.parseInt(br.readLine());
+      }
+      int x = Integer.parseInt(br.readLine());
+      int fi = lastIndex(arr, 0, x);
+      System.out.println(fi);
+   }
+
+   public static int lastIndex(int[] arr, int idx, int x) {
+      if(idx == arr.length){
+         return -1;
+      }
+
+      int liisa = lastIndex(arr, idx + 1, x);
+      if(liisa != -1){
+         return liisa;
+      } else if(arr[idx] == x){
+         return idx;
+      } else {
+         return -1;
+      }
+   }
+
+}
+
+
+                        
+#include <iostream>
+using namespace std;
+
+int lastIndex(int arr[], int idx, int x, int n){
+    if (idx == n)
+        return -1;
+
+    int a = lastIndex(arr, idx + 1, x, n);
+
+    if (a != -1)
+        return a;
+
+    if (arr[idx] == x)
+        return idx;
+    else
+        return -1;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int d;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    cin >> d;
+    int p = lastIndex(arr, 0, d, n);
+    cout << p << endl;
+}
+
+--------------------------------------------------------------------------------------------
+
+All Indices Of Array
+Easy
+
+1. You are given a number n, representing the count of elements. 
+
+2. You are given n numbers.
+
+3. You are given a number x. 
+
+4. You are required to return the all indices at which x occurs in array a. 
+
+5. Return an array of appropriate size which contains all indices at which x occurs in array 
+
+6. If no such element exist print "NO OUTPUT" a. 
+
+
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+
+Constraints
+1 <= n <= 10^4 0 <= n1, n2, .. n elements <= 10 ^ 3 0 <= x <= 10 ^ 3
+
+
+Format
+Input
+A number n n1 n2 .. n number of elements A number x
+
+
+Output
+Return the array of indices from the allIndices function. Display is managed for you.
+
+
+Example
+Sample Input
+
+6
+15
+11
+40
+4
+4
+9
+4
+
+Sample Output
+3
+4
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+        int x = Integer.parseInt(br.readLine());
+        int[] iarr = allIndices(arr, x, 0, 0);
+
+        if(iarr.length == 0){
+            System.out.println("NO OUTPUT");
+            return;
+        }
+        
+        for(int i = 0; i < iarr.length; i++){
+            System.out.println(iarr[i]);
+        }
+    }
+
+    public static int[] allIndices(int[] arr, int x, int idx, int fsf) {
+        if(idx == arr.length){
+            return new int[fsf];
+        }
+        
+        int[] iarr;
+
+        if(arr[idx] == x){
+            iarr = allIndices(arr, x, idx + 1, fsf + 1);
+            iarr[fsf] = idx;
+        } else {
+            iarr = allIndices(arr, x, idx + 1, fsf);
+        }
+        
+        return iarr;
+    }
+
+}
+
+
+                        #include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> allIndex(vector<int>& arr, int idx, int data, int count)
+{
+  if (idx == arr.size())
+  {
+    vector<int> base(count, 0);
+    return base;
+  }
+
+  if (arr[idx] == data)
+    count++;
+  vector<int> ans = allIndex(arr, idx + 1, data, count);
+  if (arr[idx] == data)
+    ans[count - 1] = idx;
+
+  return ans;
+}
+
+int main() {
+  int n ;
+  cin >> n;
+  vector<int> arr;
+  for (int i = 0; i < n; i++) {
+    int d;
+    cin >> d;
+    arr.push_back(d);
+  }
+  int data;
+  cin >> data;
+  vector<int> ans = allIndex(arr, 0, data, 0);
+  if (ans.size() == 0) {
+    cout <<"NO OUTPUT";
+    return 0;
+  }
+  for (int ele : ans) cout << ele << endl;
+
+  return 0;
+}
+                        
+----------------------------------------------------------------------------------------------
+
+Get Subsequence
+Easy
+
+1. You are given a string str. 2. Complete the body of getSS function - without changing signature - to calculate all subsequences of str. Use sample input and output to take idea about subsequences. Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+
+Constraints
+0 <= str.length <= 20
+
+
+Format
+Input
+A string str
+
+
+Output
+Contents of the arraylist containing subsequences as shown in sample output
+
+
+Example
+Sample Input
+
+abc
+
+Sample Output
+[, c, b, bc, a, ac, ab, abc]
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        ArrayList<String> ss = gss(str);
+        System.out.println(ss);
+    }
+
+    public static ArrayList<String> gss(String str) {
+        if(str.length() == 0){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+
+        char ch = str.charAt(0);
+        String ros = str.substring(1);
+
+        ArrayList<String> rres = gss(ros);
+        ArrayList<String> mres = new ArrayList<>();
+
+        for(String rstr: rres){
+            mres.add(rstr);
+        }
+
+        for(String rstr: rres){
+            mres.add(ch + rstr);
+        }
+        return mres;
+    }
+}
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<string> gss(string s){
+
+    if (s == ""){
+        vector<string> base_case;
+        base_case.push_back("");
+        return base_case;
+    }
+
+    char ch = s[0];
+    string ros = s.substr(1);
+
+    vector<string> rres = gss(ros);
+    vector<string> mres;
+
+    for (string s : rres){
+        mres.push_back(s);
+    }
+
+    for (string s : rres){
+        mres.push_back(ch + s);
+    }
+
+    return mres;
+}
+
+int main(){
+    string s;
+    cin >> s;
+    vector<string> ans = gss(s);
+    int cnt = 0;
+
+    cout << "[";
+    for (string str : ans){
+        if (cnt != ans.size() - 1)
+            cout << str << ", ";
+        else
+            cout << str;
+        cnt++;
+    }
+    cout << "]";
+}
+
+----------------------------------------------------------------------------------------------
+
+Get Kpc
+Easy
+
+1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone.
+2. The following list is the key to characters map :
+    0 -> .;
+    1 -> abc
+    2 -> def
+    3 -> ghi
+    4 -> jkl
+    5 -> mno
+    6 -> pqrs
+    7 -> tu
+    8 -> vwx
+    9 -> yz
+3. Complete the body of getKPC function - without changing signature - to get the list of all words that could be produced by the keys in str.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.                 
+
+Constraints
+0 <= str.length <= 10
+str contains numbers only
+
+Format
+Input
+A string str
+
+Output
+Contents of the arraylist containing words as shown in sample output
+
+Example
+Sample Input
+
+78
+
+Sample Output
+[tv, tw, tx, uv, uw, ux]
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        ArrayList<String> words = getKPC(str);
+        System.out.println(words);
+    }
+
+    static String[] codes = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    public static ArrayList<String> getKPC(String str) {
+        if(str.length() == 0){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+
+        char ch = str.charAt(0);
+        String ros = str.substring(1);
+
+        ArrayList<String> rres = getKPC(ros);
+        ArrayList<String> mres = new ArrayList<>();
+
+        for(char chcode: codes[ch - 48].toCharArray()){
+            for(String rstr: rres){
+                mres.add(chcode + rstr);
+            }
+        }
+
+        return mres;
+    }
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+
+vector<string> keypad = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+
+vector<string> getKPC(string s){
+    if(s.size() ==0){
+        vector<string> empty_ans;
+        empty_ans.push_back("");
+        return empty_ans;
+    }
+    
+    string new_question = s.substr(1, s.size()-1);
+    vector<string> small_ans = getKPC(new_question);
+    
+    vector<string> ans;
+    
+    char ch = s.at(0);
+    int idx = ch - '0';
+    
+    for(int i=0; i<keypad[idx].size(); i++){
+        char c = keypad[idx].at(i);
+        for(int j=0; j<small_ans.size(); j++){
+            string str = small_ans[j];
+            string final = c + str;
+            ans.push_back(final);
+        }
+    }
+    return ans;
+}
+
+
+int main(){
+    string s;
+    cin >> s;
+    vector<string> ans = getKPC(s);
+    int cnt = 0;
+
+    cout << '[';
+    for (string str : ans){
+        if (cnt != ans.size() - 1)
+            cout << str << ", ";
+        else
+            cout << str;
+        cnt++;
+    }
+    cout << ']';
+}
+
+-----------------------------------------------------------------------------------------------
+
+Get Stair Paths
+Easy
+
+1. You are given a number n representing number of stairs in a staircase.
+2. You are standing at the bottom of staircase. You are allowed to climb 1 step, 2 steps or 3 steps in one move.
+3. Complete the body of getStairPaths function - without changing signature - to get the list of all paths that can be used to climb the staircase up.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+
+Format
+Input
+A number n
+
+Output
+Contents of the arraylist containing paths as shown in sample output
+
+Example
+Sample Input
+
+3
+
+Sample Output
+[111, 12, 21, 3]
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        ArrayList<String> paths = getStairPaths(n);
+        System.out.println(paths);
+    }
+
+    public static ArrayList<String> getStairPaths(int n) {
+        if(n <= 0){
+            ArrayList<String> bres = new ArrayList<>();
+
+            if(n == 0){
+                bres.add("");
+            }
+
+            return bres;
+        }
+    
+        ArrayList<String> rres1 = getStairPaths(n - 1);
+        ArrayList<String> rres2 = getStairPaths(n - 2);
+        ArrayList<String> rres3 = getStairPaths(n - 3);
+        ArrayList<String> mres = new ArrayList<>();
+
+        for(String rstr: rres1){
+            mres.add(1 + rstr);
+        }
+
+        for(String rstr: rres2){
+            mres.add(2 + rstr);
+        }
+
+        for(String rstr: rres3){
+            mres.add(3 + rstr);
+        }
+
+        return mres;
+    }
+}
+
+
+                        #include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+vector<string> get_stair_paths(int n){
+    if(n == 0){
+        vector<string> brr;
+        brr.push_back("");
+        return brr;
+    }
+    
+    if(n<0){
+        vector<string> brr;
+        return brr;
+    }
+    
+    vector<string>ans;
+    for(int step =1; step<=3; step++){
+        vector<string> small_ans = get_stair_paths(n-step);
+        for(int j=0; j<small_ans.size(); j++){
+            string ss = small_ans[j];
+            char no_of_steps = (char)(step + '0');
+            string ans_to_add =no_of_steps + ss;
+            ans.push_back(ans_to_add);
+        }
+    }
+    return ans;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    vector<string> ans = get_stair_paths(n);
+    int cnt = 0;
+
+    cout << '[';
+    for (string str : ans){
+        if (cnt != ans.size() - 1)
+            cout << str << ", ";
+        else
+            cout << str;
+        cnt++;
+    }
+    cout << ']';
+}
+
+----------------------------------------------------------------------------------------------------
+
+Get Maze Paths
+Easy
+
+1. You are given a number n and a number m representing number of rows and columns in a maze.
+2. You are standing in the top-left corner and have to reach the bottom-right corner. Only two moves are allowed 'h' (1-step horizontal) and 'v' (1-step vertical).
+3. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+0 <= m <= 10
+
+Format
+Input
+A number n
+A number m
+
+Output
+Contents of the arraylist containing paths as shown in sample output
+
+Example
+Sample Input
+
+3
+3
+
+Sample Output
+[hhvv, hvhv, hvvh, vhhv, vhvh, vvhh]
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        ArrayList<String> paths = getMazePaths(0, 0, n - 1, m - 1);
+        System.out.println(paths);
+    }
+
+    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+        if(sr > dr || sc > dc){
+            return new ArrayList<String>();
+        }
+
+        if(sr == dr && sc == dc){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+
+        ArrayList<String> hpaths = getMazePaths(sr, sc + 1, dr, dc);
+        ArrayList<String> vpaths = getMazePaths(sr + 1, sc, dr, dc);
+        ArrayList<String> paths = new ArrayList<>();
+
+        for(String hpath: hpaths){
+            paths.add("h" + hpath);
+        }
+    
+
+        for(String vpath: vpaths){
+            paths.add("v" + vpath);
+        }
+    
+
+        return paths;
+    }
+}
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+// sr - source row
+// sc - source column
+// dr - destination row
+// dc - destination column
+vector <string> getMazePaths(int sr, int sc, int dr, int dc) {
+    if(sr == dr && sc == dc){
+        vector<string> base;
+        base.push_back("");
+        return base;
+    }
+    
+    vector<string> myAns;
+    if(sc + 1 <= dc){
+        vector<string> Horizontal = getMazePaths(sr,sc+1,dr,dc);
+        for(string s : Horizontal){
+            myAns.push_back("h" + s);
+        }
+    }
+    
+    if(sr + 1 <= dr){
+        vector<string> Vertical = getMazePaths(sr + 1,sc,dr,dc);
+        for(string s : Vertical){
+            myAns.push_back("v" + s);
+        }
+    }
+    
+    return myAns;
+}
+
+void display(vector<string>& arr){
+    cout << "[";
+    for(int i = 0;i < arr.size();i++){
+        cout << arr[i];
+        if(i < arr.size() -1) cout << ", ";
+    }
+    
+    cout << "]"<<endl;
+}
+
+
+int main() {
+    int n,m; cin >> n >> m;
+    vector<string> ans = getMazePaths(0,0,n-1,m-1);
+    display(ans);
+
+    return 0;
+}
+                        
+-----------------------------------------------------------------------------------------------------
+
+Get Maze Path With Jumps
+Easy
+
+1. You are given a number n and a number m representing number of rows and columns in a maze.
+2. You are standing in the top-left corner and have to reach the bottom-right corner. 
+3. In a single move you are allowed to jump 1 or more steps horizontally (as h1, h2, .. ), or 1 or more steps vertically (as v1, v2, ..) or 1 or more steps diagonally (as d1, d2, ..). 
+4. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+0 <= m <= 10
+
+Format
+Input
+A number n
+A number m
+
+Output
+Contents of the arraylist containing paths as shown in sample output
+
+Example
+Sample Input
+
+2
+2
+
+Sample Output
+[h1v1, v1h1, d1]
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        ArrayList<String> paths = getMazePaths(0, 0, n - 1, m - 1);
+        System.out.println(paths);
+    }
+
+    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+        if(sr > dr || sc > dc){
+            return new ArrayList<>();
+        }
+
+        if(sr == dr && sc == dc){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+
+        ArrayList<String> paths = new ArrayList<>();
+        for(int move = 1; move <= dc - sc; move++){
+            ArrayList<String> hpaths = getMazePaths(sr, sc + move, dr, dc);
+            for(String hpath: hpaths){
+                paths.add("h" + move + hpath);
+            }
+        }
+        
+        for(int move = 1; move <= dr - sr; move++){
+            ArrayList<String> vpaths = getMazePaths(sr + move, sc, dr, dc);
+            for(String vpath: vpaths){
+                paths.add("v" + move + vpath);
+            }
+        }
+
+        for(int move = 1; move <= dc - sc && move <= dr - sr; move++){
+            ArrayList<String> dpaths = getMazePaths(sr + move, sc + move, dr, dc);
+            for(String dpath: dpaths){
+                paths.add("d" + move + dpath);
+            }
+        }
+
+        return paths;
+    }
+}
+
+
+                        #include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+vector<string> get_maze_paths(int sr, int sc, int dr, int dc) {
+    if(sr == dr && sc == dc){
+        vector<string> empty_ans;
+        empty_ans.push_back("");
+        return empty_ans;
+    }
+    
+    vector<string> ans;
+    
+    for(int jump = 1; jump+sc <=dc; jump++){
+        vector<string> h_paths = get_maze_paths(sr, sc+jump, dr, dc);
+        
+        for(string str : h_paths){
+            ans.push_back("h" +to_string(jump)+ str);
+        }
+    }
+    
+    for(int jump = 1; jump + sr <=dr; jump++){
+        vector<string> v_paths = get_maze_paths(sr+jump, sc, dr, dc);
+            for(string str : v_paths){
+               ans.push_back("v" +to_string(jump)+ str);
+        }
+    }
+    
+    
+    for(int jump =1; jump+sr<=dr && jump+sc <=dc; jump++){
+        vector<string> d_paths = get_maze_paths(sr+jump, sc+jump, dr, dc);
+            for(string str : d_paths){
+                ans.push_back("d" +to_string(jump)+ str);
+        }
+        }
+    return ans;
+    }
+    
+void display(vector<string>& arr){
+    cout << "[";
+    for(int i = 0;i < arr.size();i++){
+        cout << arr[i];
+        if(i < arr.size() -1) cout << ", ";
+    }
+    
+    cout << "]"<<endl;
+}
+
+
+int main() {
+    int n,m; cin >> n >> m;
+    vector<string> ans = get_maze_paths(0,0,n-1,m-1);
+    display(ans);
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+
+Print Subsequence
+Easy
+
+1. You are given a string str.
+2. Complete the body of printSS function - without changing signature - to calculate and print all subsequences of str.
+Use sample input and output to take idea about subsequences.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= str.length <= 7
+
+Format
+Input
+A string str
+
+Output
+Subsequences of str in order hinted by Sample output
+
+Example
+Sample Input
+
+yvTA
+
+Sample Output
+yvTA
+yvT
+yvA
+yv
+yTA
+yT
+yA
+y
+vTA
+vT
+vA
+v
+TA
+T
+A
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        printSS(str, "");
+    }
+
+    public static void printSS(String ques, String ans){
+        if(ques.length() == 0){
+            System.out.println(ans);
+            return;
+        }
+
+        char ch = ques.charAt(0);
+        String roq = ques.substring(1);
+        printSS(roq, ans + ch);
+        printSS(roq, ans + "");
+    }
+}
+
+
+                        
+                        #include <iostream>
+using namespace std;
+
+void printSS(string ques, string ans){
+    if (ques.length() == 0){
+        cout << ans << endl;
+        return;
+    }
+
+    char ch = ques[0];
+    string roq = ques.substr(1);
+    printSS(roq, ans + ch);
+    printSS(roq, ans + "");
+}
+
+int main(){
+    string str;
+    cin >> str;
+    printSS(str, "");
+}
+
+---------------------------------------------------------------------------------------------------
+
+Print Kpc
+Easy
+
+1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone. 2. The following list is the key to characters map 0 -> .; 1 -> abc 2 -> def 3 -> ghi 4 -> jkl 5 -> mno 6 -> pqrs 7 -> tu 8 -> vwx 9 -> yz 3. Complete the body of printKPC function - without changing signature - to print the list of all words that could be produced by the keys in str. Use sample input and output to take idea about output. Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+
+Constraints
+0 <= str.length <= 10 str contains numbers only
+
+
+Format
+Input
+A string str
+
+
+Output
+Words that can be produced by pressed keys indictated by str in order hinted by Sample output
+
+
+Example
+Sample Input
+
+78
+
+Sample Output
+tv
+tw
+tx
+uv
+uw
+ux
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        printKPC(str, "");
+    }
+
+    static String[] codes = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    public static void printKPC(String ques, String asf) {
+        if(ques.length() == 0){
+            System.out.println(asf);
+            return;
+        }
+
+        char ch = ques.charAt(0);
+        String roq = ques.substring(1);
+        for(char chcode: codes[ch - 48].toCharArray()){
+            printKPC(roq, asf + chcode);
+        }
+    }
+}
+
+
+                        #include <iostream>
+using namespace std;
+
+string codes[] = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+
+void printKPC(string ques, string asf){
+    if (ques.length() == 0){
+        cout << asf << endl;
+        return;
+    }
+
+    char ch = ques[0];
+    string roq = ques.substr(1);
+    for (char chcode : codes[ch - 48]){
+        printKPC(roq, asf + chcode);
+    }
+}
+
+int main(){
+    string str;
+    cin >> str;
+    printKPC(str, "");
+}
+                        
+--------------------------------------------------------------------------------------------------
+
+Print Stair Paths
+Easy
+
+1. You are given a number n representing number of stairs in a staircase.
+2. You are standing at the bottom of staircase. You are allowed to climb 1 step, 2 steps or 3 steps in one move.
+3. Complete the body of printStairPaths function - without changing signature - to print the list of all paths that can be used to climb the staircase up.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+
+Format
+Input
+A number n
+
+Output
+Print paths (one path in each line) in order hinted by Sample output
+
+Example
+Sample Input
+
+3
+
+Sample Output
+111
+12
+21
+3
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        printStairPaths(n, "");
+    }
+
+    public static void printStairPaths(int n, String psf) {
+        if(n <= 0){
+            if(n == 0){
+                System.out.println(psf);
+            }
+
+            return;
+        }
+    
+        printStairPaths(n - 1, psf + 1);
+        printStairPaths(n - 2, psf + 2);
+        printStairPaths(n - 3, psf + 3);
+    }
+}
+
+#include <iostream>
+using namespace std;
+
+void printStairPaths(int n, string psf){
+    if (n <= 0){
+        if (n == 0){
+            cout << psf << endl;
+        }
+        return;
+    }
+
+    printStairPaths(n - 1, psf + "1");
+    printStairPaths(n - 2, psf + "2");
+    printStairPaths(n - 3, psf + "3");
+}
+
+int main(){
+
+    int n;
+    cin >> n;
+    printStairPaths(n, "");
+}
+
+----------------------------------------------------------------------------------------------------
+
+Print Maze Paths
+Easy
+
+1. You are given a number n and a number m representing number of rows and columns in a maze.
+2. You are standing in the top-left corner and have to reach the bottom-right corner. Only two moves are allowed 'h' (1-step horizontal) and 'v' (1-step vertical).
+3. Complete the body of pri tMazePath function - without changing signature - to print the list of all paths that can be used to move from top-left to bottom-right.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 10
+0 <= m <= 10
+
+Format
+Input
+A number n
+A number m
+
+Output
+Print paths (one path in each line) in order hinted by Sample output
+
+Example
+Sample Input
+
+2
+2
+
+Sample Output
+hv
+vh
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        printMazePaths(0, 0, n - 1, m - 1, "");
+    }
+
+    public static void printMazePaths(int sr, int sc, int dr, int dc, String psf) {
+        if(sr > dr || sc > dc){
+            return;
+        }
+
+        if(sr == dr && sc == dc){
+            System.out.println(psf);
+            return;
+        }
+
+        printMazePaths(sr, sc + 1, dr, dc, psf + "h");
+        printMazePaths(sr + 1, sc, dr, dc, psf + "v");
+    }
+}
+
+
+#include <iostream>
+using namespace std;
+
+void printMazePaths(int sr, int sc, int dr, int dc, string psf)
+{
+    if (sr > dr || sc > dc){
+        return;
+    }
+
+    if (sr == dr && sc == dc){
+        cout << psf << endl;
+        return;
+    }
+
+    printMazePaths(sr, sc + 1, dr, dc, psf + "h");
+    printMazePaths(sr + 1, sc, dr, dc, psf + "v");
+}
+
+int main(){
+    int n;
+    int m;
+    cin >> n >> m;
+    printMazePaths(0, 0, n - 1, m - 1, "");
+}
+
+------------------------------------------------------------------------------------------------
+
+Print Maze Paths With Jumps
+Easy
+
+1. You are given a number n and a number m representing number of rows and columns in a maze.
+2. You are standing in the top-left corner and have to reach the bottom-right corner. 
+3. In a single move you are allowed to jump 1 or more steps horizontally (as h1, h2, .. ), or 1 or more steps vertically (as v1, v2, ..) or 1 or more steps diagonally (as d1, d2, ..). 
+4. Complete the body of printMazePath function - without changing signature - to print the list of all paths that can be used to move from top-left to bottom-right.
+Use sample input and output to take idea about output.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= n <= 5
+0 <= m <= 5
+
+Format
+Input
+A number n
+A number m
+
+Output
+Print paths (one path in each line) in order hinted by Sample output
+
+Example
+Sample Input
+
+3
+3
+
+Sample Output
+h1h1v1v1
+h1h1v2
+h1v1h1v1
+h1v1v1h1
+h1v1d1
+h1v2h1
+h1d1v1
+h2v1v1
+h2v2
+v1h1h1v1
+v1h1v1h1
+v1h1d1
+v1h2v1
+v1v1h1h1
+v1v1h2
+v1d1h1
+v2h1h1
+v2h2
+d1h1v1
+d1v1h1
+d1d1
+d2
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        printMazePaths(0, 0, n - 1, m - 1, "");
+    }
+
+    public static void printMazePaths(int sr, int sc, int dr, int dc, String psf) {
+        if(sr > dr || sc > dc){
+            return;
+        }
+
+        if(sr == dr && sc == dc){
+            System.out.println(psf);
+            return;
+        }
+
+        for(int move = 1; move <= dc - sc; move++){
+            printMazePaths(sr, sc + move, dr, dc, psf + "h" + move);
+        }
+        
+        for(int move = 1; move <= dr - sr; move++){
+            printMazePaths(sr + move, sc, dr, dc, psf + "v" + move);
+        }
+
+        for(int move = 1; move <= dc - sc && move <= dr - sr; move++){
+            printMazePaths(sr + move, sc + move, dr, dc, psf + "d" + move);
+        }
+    }
+}
+
+#include<iostream>
+using namespace std;
+
+
+    void printMazePaths(int sr, int sc, int dr, int dc, string psf) {
+        if(sr > dr || sc > dc){
+            return;
+        }
+
+        if(sr == dr && sc == dc){
+            cout<<psf<<endl;
+            return;
+        }
+
+        for(int jumps = 1; jumps <= dc - sc; jumps++){
+            printMazePaths(sr, sc + jumps, dr, dc, psf + "h" + (to_string)(jumps));
+        }
+
+        for(int jumps = 1; jumps <= dr - sr; jumps++){
+            printMazePaths(sr + jumps, sc, dr, dc, psf + "v" + (to_string)(jumps));
+        }
+
+        for(int jumps = 1; jumps <= dr - sr && jumps <= dc - sc; jumps++){
+            printMazePaths(sr + jumps, sc + jumps, dr, dc, psf + "d" + (to_string)(jumps));
+        }
+        
+    }
+
+int main() {
+        int n ;
+        int m ;cin>>n>>m;
+        printMazePaths(0, 0, n - 1, m - 1, "");
+    }
+
+-----------------------------------------------------------------------------------------------------
+
+Print Permutations
+Easy
+
+1. You are given a string str.
+2. Complete the body of printPermutations function - without changing signature - to calculate and print all permutations of str.
+Use sample input and output to take idea about permutations.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= str.length <= 7
+
+Format
+Input
+A string str
+
+Output
+Permutations of str in order hinted by Sample output
+
+Example
+Sample Input
+
+abc
+
+Sample Output
+abc
+acb
+bac
+bca
+cab
+cba
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        printPermutations(str, "");
+    }
+
+    public static void printPermutations(String ques, String ans){
+        if(ques.length() == 0){
+            System.out.println(ans);
+            return;
+        }
+
+        for(int i = 0; i < ques.length(); i++){
+            char ch = ques.charAt(i);
+            String roq = ques.substring(0, i) + ques.substring(i + 1);
+            printPermutations(roq, ans + ch);
+        }
+    }
+}
+
+#include <iostream>
+using namespace std;
+
+void printPermutations(string str, string asf){
+    if(str.length() == 0){
+        cout<<asf<<endl;
+        return;
+    }
+
+    for(int i = 0 ; i < str.length(); i++){
+        char ch = str[i];
+        string ros = str.substr(0,i) + str.substr(i+1);
+        printPermutations(ros,asf + ch);
+    }
+
+}
+
+int main(){
+    string str;
+    cin>>str;
+    printPermutations(str,"");
+    
+}
+                        
+-------------------------------------------------------------------------------------------------------
+
+Print Encodings
+Easy
+
+1. You are given a string str of digits. (will never start with a 0)
+2. You are required to encode the str as per following rules
+    1 -> a
+    2 -> b
+    3 -> c
+    ..
+    25 -> y
+    26 -> z
+3. Complete the body of printEncodings function - without changing signature - to calculate and print all encodings of str.
+Use the input-output below to get more understanding on what is required
+123 -> abc, aw, lc
+993 -> iic
+013 -> Invalid input. A string starting with 0 will not be passed.
+103 -> jc
+303 -> No output possible. But such a string maybe passed. In this case print nothing.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+0 <= str.length <= 10
+
+Format
+Input
+A string str
+
+Output
+Permutations of str in order hinted by Sample output
+
+Example
+Sample Input
+
+655196
+
+Sample Output
+feeaif
+feesf
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        printEncodings(str, "");
+    }
+
+    public static void printEncodings(String ques, String ans) {
+        if (ques.length() == 0) {
+            System.out.println(ans);
+            return;
+        } else if (ques.length() == 1) {
+            if (ques.charAt(0) == ''0'') {
+                return;
+            } else {
+                String ch0 = ques.substring(0, 1);
+                String roq0 = ques.substring(1);
+                String code0 = (char)(''a'' + (Integer.parseInt(ch0) - 1)) + "";
+                printEncodings(roq0, ans + code0);
+            }
+        } else {
+            if (ques.charAt(0) == ''0'') {
+                return;
+            } else {
+                String ch0 = ques.substring(0, 1);
+                String roq0 = ques.substring(1);
+                String code0 = (char)(''a'' + (Integer.parseInt(ch0) - 1)) + "";
+                printEncodings(roq0, ans + code0);
+
+                String ch01 = ques.substring(0, 2);
+                String roq01 = ques.substring(2);
+                String code01 = (char)(''a'' + (Integer.parseInt(ch01) - 1)) + "";
+
+                if (Integer.parseInt(ch01) <= 26) {
+                    printEncodings(roq01, ans + code01);
+                }
+            }
+        }
+    }
+}
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+void printEncoding(string str, string asf){
+    if(str.length() == 0){
+        cout<<asf<<endl;
+        return;
+    }
+    
+    if(str[0] == ''0''){
+        return;
+    }
+
+    string s1 = str.substr(0,1);
+    string ros1 = str.substr(1);
+    printEncoding(ros1,asf + (char)(stoi(s1) + ''a'' - 1));
+
+    if(str.length() >= 2){
+        string s2 = str.substr(0,2);
+        string ros2 = str.substr(2);
+        if(stoi(s2) <= 26)
+        printEncoding(ros2,asf + (char)(stoi(s2) + ''a'' - 1));
+    }
+
+}
+
+int main(){
+    string str;
+    cin>>str;
+    printEncoding(str,"");
+    
+}
+
+----------------------------------------------------------------------------------------------------
+
+Flood Fill
+Easy
+
+1. You are given a number n, representing the number of rows.
+2. You are given a number m, representing the number of columns.
+3. You are given n*m numbers, representing elements of 2d array a. The numbers can be 1 or 0 only.
+4. You are standing in the top-left corner and have to reach the bottom-right corner. 
+Only four moves are allowed 't' (1-step up), 'l' (1-step left), 'd' (1-step down) 'r' (1-step right). You can only move to cells which have 0 value in them. You can't move out of the boundaries or in the cells which have value 1 in them (1 means obstacle)
+5. Complete the body of floodfill function - without changing signature - to print all paths that can be used to move from top-left to bottom-right.
+
+Note1 -> Please check the sample input and output for details
+Note2 -> If all four moves are available make moves in the order 't', 'l', 'd' and 'r'
+
+Constraints
+1 <= n <= 10
+1 <= m <= 10
+e1, e2, .. n * m elements belongs to set (0, 1)
+
+Format
+Input
+A number n
+A number m
+e11
+e12..
+e21
+e22..
+.. n * m number of elements
+
+Output
+trrrdlt
+tlldrt
+.. and so on
+
+Example
+Sample Input
+
+3 3
+0 0 0
+1 0 1
+0 0 0
+
+Sample Output
+rddr
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine());
+      int m = Integer.parseInt(br.readLine());
+      int[][] arr = new int[n][m];
+
+      for (int i = 0; i < n; i++) {
+         String str = br.readLine();
+         for (int j = 0; j < m; j++) {
+            arr[i][j] = Integer.parseInt(str.split(" ")[j]);
+         }
+      }
+
+      floodfill(arr, 0, 0, "", new boolean[n][m]);  
+   }
+
+   public static void floodfill(int[][] maze, int row, int col, String psf, boolean[][] visited){
+      if(row < 0 || col < 0 || row >= maze.length || col >= maze[0].length || 
+         maze[row][col] == 1 || visited[row][col] == true){
+         return;
+      } else if(row == maze.length - 1 && col == maze[0].length - 1){
+         System.out.println(psf);
+         return;
+      }
+
+      visited[row][col] = true;
+      floodfill(maze, row - 1, col, psf + "t", visited);
+      floodfill(maze, row, col - 1, psf + "l", visited);
+      floodfill(maze, row + 1, col, psf + "d", visited);
+      floodfill(maze, row, col + 1, psf + "r", visited);
+      visited[row][col] = false;
+   }
+
+}
+                        
+                       #include<iostream>
+#include<vector>
+
+using namespace std;
+
+void floodfill(vector<vector<int>> maze,int sr,int sc,string asf,vector<vector<bool>> visited) {
+    if(sr==maze.size()-1 && sc==maze[0].size()-1){
+        cout << asf << endl;
+        return;
+    }
+    if(sr<0 || sc<0 || sr>=maze.size() || sc>=maze[0].size()|| maze[sr][sc] == 1 || visited[sr][sc]==true ){
+        return;
+    }
+    visited[sr][sc] = true;
+    floodfill(maze,sr-1,sc,asf+"t",visited);
+    floodfill(maze,sr,sc-1,asf+"l",visited);
+    floodfill(maze,sr+1,sc,asf+"d",visited);
+    floodfill(maze,sr,sc+1,asf+"r",visited);
+    visited[sr][sc] = false;
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    vector < vector < int >> arr(n, vector < int > (m));
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            cin >> arr[i][j];
+    vector<vector<bool>> visited(n,vector<bool> (m));
+    floodfill(arr,0,0,"",visited);
+}               
+                        
+                        
+-----------------------------------------------------------------------------------------------------
+
+Target Sum Subsets
+Easy
+
+1. You are given a number n, representing the count of elements.
+2. You are given n numbers.
+3. You are given a number "tar".
+4. Complete the body of printTargetSumSubsets function - without changing signature - to calculate and print all subsets of given elements, the contents of which sum to "tar". Use sample input and output to get more idea.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 30
+0 <= n1, n2, .. n elements <= 20
+0 <= tar <= 50
+
+Format
+Input
+Input Format
+A number n
+n1
+n2
+.. n number of elements
+A number tar
+
+Output
+Comma separated elements of the subset, the contents of which add to "tar"
+.. all such subsets, each in a single line (the elements of each subset should be comma separated)
+
+Example
+Sample Input
+
+5
+10
+20
+30
+40
+50
+60
+
+Sample Output
+10, 20, 30, .
+10, 50, .
+20, 40, .
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+    
+        for(int i = 0; i < n; i++){
+           arr[i] = Integer.parseInt(br.readLine());
+        }
+
+        int tar = Integer.parseInt(br.readLine());
+        printTargetSumSubsets(arr, 0, "", 0, tar);
+    }
+
+    // set is the subset
+    // sos is sum of subset
+    // tar is target
+    public static void printTargetSumSubsets(int[] arr, int idx, String set, int sos, int tar) {
+        if(sos > tar){
+            return;
+        }
+
+        if(idx == arr.length){
+            if(sos == tar){
+                System.out.println(set + ".");
+            }
+            return;
+        }
+
+        printTargetSumSubsets(arr, idx + 1, set + arr[idx] + ", ", sos + arr[idx], tar);
+        printTargetSumSubsets(arr, idx + 1, set, sos, tar);
+    }
+
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+
+    // set is the subset
+    // sos is sum of subset
+    // tar is target
+  void printTargetSumSubsets(vector<int> arr, int idx, string set, int sos, int tar){
+     if(sos>tar){
+        return;
+    }
+    if(idx==arr.size()){
+        if(sos==tar){
+        cout<<set<<"."<<endl;
+    }
+    return;
+    }
+    string val=to_string(arr[idx]);
+    printTargetSumSubsets(arr,idx+1,set+val+", ",sos+arr[idx],tar);
+    printTargetSumSubsets(arr,idx+1,set,sos,tar);
+    }
+
+
+int main(){
+    int n,tar;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+    }
+    cin >> tar;
+    printTargetSumSubsets(arr,0,"",0,tar);
+}
+
+-------------------------------------------------------------------------------------------------------
+N Queens
+Easy
+
+1. You are given a number n, the size of a chess board.
+2. You are required to place n number of queens in the n * n cells of board such that no queen can kill another.
+Note - Queens kill at distance in all 8 directions
+3. Complete the body of printNQueens function - without changing signature - to calculate and print all safe configurations of n-queens. Use sample input and output to get more idea.
+
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+
+Constraints
+1 <= n <= 10
+
+Format
+Input
+A number n
+
+Output
+Safe configurations of queens as suggested in sample output
+
+Example
+Sample Input
+
+4
+
+Sample Output
+0-1, 1-3, 2-0, 3-2, .
+0-2, 1-0, 2-3, 3-1, .
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[][] chess = new int[n][n];
+        printNQueens(chess, "", 0);
+    }
+
+    public static void printNQueens(int[][] chess, String qsf, int row){
+        if(row == chess.length){
+            System.out.println(qsf + ".");
+            return;
+        }
+        for(int col = 0; col < chess.length; col++){
+            if(chess[row][col] == 0 && isQueenSafe(chess, row, col) == true){
+                chess[row][col] = 1;
+                printNQueens(chess, qsf + row + "-" + col + ", ", row + 1);
+                chess[row][col] = 0;
+            }
+        }
+    }
+
+    public static boolean isQueenSafe(int[][] chess, int row, int col){
+        for(int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--){
+            if(chess[i][j] == 1){
+                return false;
+            }
+        }
+
+        for(int i = row - 1, j = col; i >= 0; i--){
+            if(chess[i][j] == 1){
+                return false;
+            }
+        }
+
+        for(int i = row - 1, j = col + 1; i >= 0 && j < chess.length; i--, j++){
+            if(chess[i][j] == 1){
+                return false;
+            }
+        }
+
+        for(int i = row, j = col - 1; j >= 0; j--){
+            if(chess[i][j] == 1){
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isQueenSafe(int row,int col,vector<vector<int>> chess){
+    for(int i=row-1,j=col;i>=0;i--){
+        if(chess[i][j]==1){
+            return false;
+        }
+    }
+    for(int i=row-1,j=col-1;i>=0 && j>=0;i--,j--){
+        if(chess[i][j]==1){
+            return false;
+        }
+    }
+    for(int i=row-1,j=col+1;i>=0 && j< chess.size();i--,j++){
+        if(chess[i][j]==1){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+void printNQueens(vector<vector<int>> chess,string qsf,int row){
+    //base case
+    if(row==chess.size()){
+        cout << qsf << ". "<<endl;
+        return;
+    }
+    //loop through columns
+    for(int col=0;col<chess.size();col++){
+        if(isQueenSafe(row,col,chess)){
+            chess[row][col]=1;
+            printNQueens(chess,qsf+to_string(row)+"-"+to_string(col)+", ",row+1);
+            chess[row][col]=0;
+        }
+    }
+}
+
+int main(){
+    int n;
+    cin >> n;
+    vector<vector<int>> chess(n , vector<int> (n));
+    
+    printNQueens(chess,"",0);
+    
+}
+-------------------------------------------------------------------------------------------------
+
+Knights Tour
+Easy
+
+1. You are given a number n, the size of a chess board.
+2. You are given a row and a column, as a starting point for a knight piece.
+3. You are required to generate the all moves of a knight starting in (row, col) such that knight visits 
+     all cells of the board exactly once.
+4. Complete the body of printKnightsTour function - without changing signature - to calculate and 
+     print all configurations of the chess board representing the route
+     of knight through the chess board. Use sample input and output to get more idea.
+
+Note -> When moving from (r, c) to the possible 8 options give first precedence to (r - 2, c + 1) and 
+               move in clockwise manner to
+               explore other options.
+Note -> The online judge can't force you to write the function recursively but that is what the spirit of 
+               question is. Write recursive and not iterative logic. The purpose of the question is to aid 
+               learning recursion and not test you.
+
+Constraints
+n = 5
+0 <= row < n
+0 <= col < n
+
+Format
+Input
+A number n
+A number row
+A number col
+
+Output
+All configurations of the chess board representing route of knights through the chess board starting in (row, col)
+Use displayBoard function to print one configuration of the board.
+
+Example
+Sample Input
+
+5
+2
+0
+
+Sample Output
+25 2 13 8 23 
+12 7 24 3 14 
+1 18 15 22 9 
+6 11 20 17 4 
+19 16 5 10 21 
+
+19 2 13 8 21 
+12 7 20 3 14 
+1 18 15 22 9 
+6 11 24 17 4 
+25 16 5 10 23 
+
+25 2 13 8 19 
+12 7 18 3 14 
+1 24 15 20 9 
+6 11 22 17 4 
+23 16 5 10 21 
+
+19 2 13 8 25 
+12 7 18 3 14 
+1 20 15 24 9 
+6 11 22 17 4 
+21 16 5 10 23 
+
+21 2 17 8 19 
+12 7 20 3 16 
+1 22 13 18 9 
+6 11 24 15 4 
+23 14 5 10 25 
+
+23 2 17 8 25 
+12 7 24 3 16 
+1 22 13 18 9 
+6 11 20 15 4 
+21 14 5 10 19 
+
+25 2 17 8 23 
+12 7 24 3 16 
+1 18 13 22 9 
+6 11 20 15 4 
+19 14 5 10 21 
+
+19 2 17 8 21 
+12 7 20 3 16 
+1 18 13 22 9 
+6 11 24 15 4 
+25 14 5 10 23 
+
+25 2 15 8 19 
+16 7 18 3 14 
+1 24 11 20 9 
+6 17 22 13 4 
+23 12 5 10 21 
+
+19 2 15 8 25 
+16 7 18 3 14 
+1 20 11 24 9 
+6 17 22 13 4 
+21 12 5 10 23 
+
+21 2 15 8 19 
+16 7 20 3 14 
+1 22 11 18 9 
+6 17 24 13 4 
+23 12 5 10 25 
+
+23 2 15 8 25 
+16 7 24 3 14 
+1 22 11 18 9 
+6 17 20 13 4 
+21 12 5 10 19 
+
+23 2 13 8 21 
+14 7 22 3 12 
+1 24 9 20 17 
+6 15 18 11 4 
+25 10 5 16 19 
+
+21 2 13 8 23 
+14 7 22 3 12 
+1 20 9 24 17 
+6 15 18 11 4 
+19 10 5 16 25 
+
+25 2 13 8 19 
+14 7 18 3 12 
+1 24 9 20 17 
+6 15 22 11 4 
+23 10 5 16 21 
+
+19 2 13 8 25 
+14 7 18 3 12 
+1 20 9 24 17 
+6 15 22 11 4 
+21 10 5 16 23 
+
+21 2 11 16 19 
+12 17 20 3 10 
+1 22 7 18 15 
+6 13 24 9 4 
+23 8 5 14 25 
+
+23 2 11 16 25 
+12 17 24 3 10 
+1 22 7 18 15 
+6 13 20 9 4 
+21 8 5 14 19 
+
+23 2 11 16 21 
+12 17 22 3 10 
+1 24 7 20 15 
+6 13 18 9 4 
+25 8 5 14 19 
+
+21 2 11 16 23 
+12 17 22 3 10 
+1 20 7 24 15 
+6 13 18 9 4 
+19 8 5 14 25 
+
+21 2 9 14 19 
+10 15 20 3 8 
+1 22 5 18 13 
+16 11 24 7 4 
+23 6 17 12 25 
+
+23 2 9 14 25 
+10 15 24 3 8 
+1 22 5 18 13 
+16 11 20 7 4 
+21 6 17 12 19 
+
+25 2 9 14 23 
+10 15 24 3 8 
+1 18 5 22 13 
+16 11 20 7 4 
+19 6 17 12 21 
+
+19 2 9 14 21 
+10 15 20 3 8 
+1 18 5 22 13 
+16 11 24 7 4 
+25 6 17 12 23 
+
+23 2 7 12 21 
+8 13 22 17 6 
+1 24 3 20 11 
+14 9 18 5 16 
+25 4 15 10 19 
+
+21 2 7 12 23 
+8 13 22 17 6 
+1 20 3 24 11 
+14 9 18 5 16 
+19 4 15 10 25 
+
+25 2 7 12 23 
+8 13 24 17 6 
+1 18 3 22 11 
+14 9 20 5 16 
+19 4 15 10 21 
+
+19 2 7 12 21 
+8 13 20 17 6 
+1 18 3 22 11 
+14 9 24 5 16 
+25 4 15 10 23 
+
+25 4 15 10 23 
+14 9 24 5 16 
+1 18 3 22 11 
+8 13 20 17 6 
+19 2 7 12 21 
+
+19 4 15 10 21 
+14 9 20 5 16 
+1 18 3 22 11 
+8 13 24 17 6 
+25 2 7 12 23 
+
+25 4 15 10 19 
+14 9 18 5 16 
+1 24 3 20 11 
+8 13 22 17 6 
+23 2 7 12 21 
+
+19 4 15 10 25 
+14 9 18 5 16 
+1 20 3 24 11 
+8 13 22 17 6 
+21 2 7 12 23 
+
+21 6 17 12 19 
+16 11 20 7 4 
+1 22 5 18 13 
+10 15 24 3 8 
+23 2 9 14 25 
+
+23 6 17 12 25 
+16 11 24 7 4 
+1 22 5 18 13 
+10 15 20 3 8 
+21 2 9 14 19 
+
+25 6 17 12 23 
+16 11 24 7 4 
+1 18 5 22 13 
+10 15 20 3 8 
+19 2 9 14 21 
+
+19 6 17 12 21 
+16 11 20 7 4 
+1 18 5 22 13 
+10 15 24 3 8 
+25 2 9 14 23 
+
+25 8 5 14 19 
+6 13 18 9 4 
+1 24 7 20 15 
+12 17 22 3 10 
+23 2 11 16 21 
+
+19 8 5 14 25 
+6 13 18 9 4 
+1 20 7 24 15 
+12 17 22 3 10 
+21 2 11 16 23 
+
+21 8 5 14 19 
+6 13 20 9 4 
+1 22 7 18 15 
+12 17 24 3 10 
+23 2 11 16 25 
+
+23 8 5 14 25 
+6 13 24 9 4 
+1 22 7 18 15 
+12 17 20 3 10 
+21 2 11 16 19 
+
+21 12 5 10 19 
+6 17 20 13 4 
+1 22 11 18 9 
+16 7 24 3 14 
+23 2 15 8 25 
+
+23 12 5 10 25 
+6 17 24 13 4 
+1 22 11 18 9 
+16 7 20 3 14 
+21 2 15 8 19 
+
+23 12 5 10 21 
+6 17 22 13 4 
+1 24 11 20 9 
+16 7 18 3 14 
+25 2 15 8 19 
+
+21 12 5 10 23 
+6 17 22 13 4 
+1 20 11 24 9 
+16 7 18 3 14 
+19 2 15 8 25 
+
+21 14 5 10 19 
+6 11 20 15 4 
+1 22 13 18 9 
+12 7 24 3 16 
+23 2 17 8 25 
+
+23 14 5 10 25 
+6 11 24 15 4 
+1 22 13 18 9 
+12 7 20 3 16 
+21 2 17 8 19 
+
+25 14 5 10 23 
+6 11 24 15 4 
+1 18 13 22 9 
+12 7 20 3 16 
+19 2 17 8 21 
+
+19 14 5 10 21 
+6 11 20 15 4 
+1 18 13 22 9 
+12 7 24 3 16 
+25 2 17 8 23 
+
+23 16 5 10 21 
+6 11 22 17 4 
+1 24 15 20 9 
+12 7 18 3 14 
+25 2 13 8 19 
+
+21 16 5 10 23 
+6 11 22 17 4 
+1 20 15 24 9 
+12 7 18 3 14 
+19 2 13 8 25 
+
+25 16 5 10 23 
+6 11 24 17 4 
+1 18 15 22 9 
+12 7 20 3 14 
+19 2 13 8 21 
+
+19 16 5 10 21 
+6 11 20 17 4 
+1 18 15 22 9 
+12 7 24 3 14 
+25 2 13 8 23 
+
+23 10 5 16 21 
+6 15 22 11 4 
+1 24 9 20 17 
+14 7 18 3 12 
+25 2 13 8 19 
+
+21 10 5 16 23 
+6 15 22 11 4 
+1 20 9 24 17 
+14 7 18 3 12 
+19 2 13 8 25 
+
+25 10 5 16 19 
+6 15 18 11 4 
+1 24 9 20 17 
+14 7 22 3 12 
+23 2 13 8 21 
+
+19 10 5 16 25 
+6 15 18 11 4 
+1 20 9 24 17 
+14 7 22 3 12 
+21 2 13 8 23
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int r = Integer.parseInt(br.readLine());
+        int c = Integer.parseInt(br.readLine());
+
+        int[][] chess = new int[n][n];
+        printKnightsTour(chess, r, c, 1);
+    }
+
+    public static void printKnightsTour(int[][] chess, int r, int c, int upcomingMove){
+        if(r < 0 || c < 0 || r >= chess.length || c >= chess.length || chess[r][c] != 0){
+            return;
+        } else if(upcomingMove == chess.length * chess.length){
+            chess[r][c] = upcomingMove;
+            displayBoard(chess);
+            chess[r][c] = 0;    
+            return;
+        }
+
+        chess[r][c] = upcomingMove;
+        printKnightsTour(chess, r - 2, c + 1, upcomingMove + 1);
+        printKnightsTour(chess, r - 1, c + 2 , upcomingMove + 1);
+        printKnightsTour(chess, r + 1, c + 2 , upcomingMove + 1);
+        printKnightsTour(chess, r + 2, c + 1 , upcomingMove + 1);
+        printKnightsTour(chess, r + 2, c - 1 , upcomingMove + 1);
+        printKnightsTour(chess, r + 1, c - 2 , upcomingMove + 1);
+        printKnightsTour(chess, r - 1, c - 2 , upcomingMove + 1);
+        printKnightsTour(chess, r - 2, c - 1 , upcomingMove + 1);
+        chess[r][c] = 0;
+    }
+
+    public static void displayBoard(int[][] chess){
+        for(int i = 0; i < chess.length; i++){
+            for(int j = 0; j < chess[0].length; j++){
+                System.out.print(chess[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+    }
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//function to display the 2-d array
+void display(vector<vector<int>> &chess){
+    for(int i=0;i<chess.size();i++){
+        for(int j=0;j<chess.size();j++){
+            cout << chess[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+void printKnightsTour(vector<vector<int>> &chess,int n,int r,int c,int upcomingMove){
+    //base case
+    if(r<0 || c<0 || r>=n || c >= n || chess[r][c] != 0){
+        return;
+    }
+    if(upcomingMove==n*n){
+        chess[r][c]=upcomingMove;
+        display(chess);
+        chess[r][c]=0;
+        return;
+    }
+    chess[r][c]=upcomingMove;
+    printKnightsTour(chess,n,r-2,c+1,upcomingMove+1);
+    printKnightsTour(chess,n,r-1,c+2,upcomingMove+1);
+    printKnightsTour(chess,n,r+1,c+2,upcomingMove+1);
+    printKnightsTour(chess,n,r+2,c+1,upcomingMove+1);
+    printKnightsTour(chess,n,r+2,c-1,upcomingMove+1);
+    printKnightsTour(chess,n,r+1,c-2,upcomingMove+1);
+    printKnightsTour(chess,n,r-1,c-2,upcomingMove+1);
+    printKnightsTour(chess,n,r-2,c-1,upcomingMove+1);
+    chess[r][c]=0;
+}
+
+int main(){
+    int n,r,c;
+    cin >> n >> r >> c;
+    vector<vector<int>> chess(n,vector<int> (n,0));
+    printKnightsTour(chess,n,r,c,1);
+}
+                        
+-----------------------------------------------------------------------------------------------
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
